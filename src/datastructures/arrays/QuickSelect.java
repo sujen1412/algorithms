@@ -1,17 +1,20 @@
 package datastructures.arrays;
 
+import java.util.Arrays;
+
 public class QuickSelect {
 
 	public static void main(String[] args) {
-		int[] arr = {1,2,4,7,10,11,7,12,18,6,7,22,16,18,19};
-		System.out.println(quickSelect(arr, 0, arr.length-1, 8));
+		int[] arr = {1,2,4,7,10,11,12,18,6,22,16,18,19};
+		System.out.println(quickSelect(arr, 0, arr.length-1, arr.length - -1 - 2));
+		//Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	public static int quickSelect(int[] arr, int low, int high, int n){
 		if(low == high){
 			return arr[low];
 		}
-		n = n-1;
 		int pivotIndex = (low+high)/2;
 		pivotIndex = partition(arr, low, high, pivotIndex);
 		if(pivotIndex == n){
